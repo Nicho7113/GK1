@@ -26,10 +26,7 @@ export function HeaderBar() {
         </View>
         <Text style={headerBarStyles.appName}>GameShelf</Text>
       </View>
-      {/* Right: Login Button */}
-      <TouchableOpacity style={headerBarStyles.loginButton} activeOpacity={0.85}>
-        <Text style={headerBarStyles.loginButtonText}>Login</Text>
-      </TouchableOpacity>
+
   </View>
   );
 }

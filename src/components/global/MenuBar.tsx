@@ -21,17 +21,10 @@ export default function MenuBar({
   onHome, onSearch, onApps, onSettings, activeScreen,
 }: Props) {
   const insets = useSafeAreaInsets();
-
-//Meget af koden i resposnive.ts er ikke nødvendig medmindre man selv vil beregne responsive størrelser
-//Var 100 gange nemmere bare at downloade react-native-responsive-sizes --> Ligger også kode i primitives og semantic som ikke vil bruges rigtigt
-const {
-    iconNav, vPad, hPad, isTablet, minTouch
-  } = useResponsive();
-  // Clamp icon size og Vpad for enheder der er tablet eller desktopish eller phone
-  const menuBarIcon = isTablet ? Math.max(iconNav, semantic.icon.navTabletCap) : Math.min(iconNav, size(28));
-  // Vertical padding
-  const menuBarVPad = isTablet ? Math.max(vPad, size(18)) : Math.min(vPad * 0.8, size(7));
-  const menuBarHPad = hPad;
+  const { isTablet, minTouch } = useResponsive();
+  const menuBarIcon = isTablet ? semantic.icon.navTabletCap : semantic.icon.nav;
+  const menuBarVPad = isTablet ? semantic.space.barVMax : semantic.space.barVMin;
+  const menuBarHPad = semantic.space.barHMin;
   const barHeight = Math.round(menuBarIcon + menuBarVPad * 2 + insets.bottom);
 
 

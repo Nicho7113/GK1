@@ -98,8 +98,7 @@ export function useResponsive() {
   const contentWidth = Math.max(320, Math.min(720, dpWidth));
 
   // Hvor stor minimum radiusen af et touch target skal være.
-  // Nu skaleret responsivt med size() for at sikre tilgængelighed på alle enheder.
-  const minTouch = 48; // dp; skaleres nu responsivt
+  const minTouch = 48; 
 
   return {
     // environment
