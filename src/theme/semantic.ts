@@ -6,7 +6,7 @@ export const semantic = {
     body: primitives.font.md,
     tiny: primitives.font.xxs,
     huge: primitives.font.xxl,
-    title: primitives.font.xl,
+    sectionTitle: primitives.font.lg,
   },
   icon: {
     nav: primitives.icon.sm,
