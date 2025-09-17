@@ -7,7 +7,7 @@ import { semantic } from "@/theme/semantic";
 
 export default function LogScreen() {
 		return (
-			<View style={screenStyles.container}>
+		<View style={screenStyles.container}>
 				<Text style={{ color: semantic.color.text, fontSize: semantic.font.body }}>Log Screen</Text>
 		</View>
 	);

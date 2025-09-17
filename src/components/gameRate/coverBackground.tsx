@@ -1,25 +1,36 @@
-import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import * as React from "react";
+import { Image, View, Text, TouchableOpacity } from "react-native";
+import { coverBackgroundStyles } from "@/styles/componentsStyle/CoverBackgroundStyle";
+import { Ionicons } from '@expo/vector-icons';
+import BackArrow from '@/components/global/backArrow';
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
+import { size } from "react-native-responsive-sizes";
 
-export default function CoverBackground() {
+interface CoverBackgroundProps {
+  navigation?: any;
+  cover: any;
+  portrait: any;
+}
+
+export default function CoverBackground({ navigation, cover, portrait }: CoverBackgroundProps) {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.container}>
+    <View style={[coverBackgroundStyles.container, { top: insets.top }]}> 
       <Image
-        source={require("../../../assets/home/trendingGames/Fortnite.jpg")}
-        style={styles.cover}
+        source={cover}
+        style={coverBackgroundStyles.coverBg}
       />
+      <View style={coverBackgroundStyles.overlay} />
+      <BackArrow onPress={() => navigation?.goBack()} style={coverBackgroundStyles.backArrow} />
+      <View style={coverBackgroundStyles.portraitContainer}>
+        <Image
+          source={portrait}
+          style={coverBackgroundStyles.portrait}
+        />
+      </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    alignItems: "center",
-  },
-  cover: {
-    width: "100%",
-    height: 220,
-    resizeMode: "cover",
-  },
-});

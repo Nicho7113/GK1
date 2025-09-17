@@ -31,7 +31,7 @@ export const headerBarStyles = StyleSheet.create({
     marginRight: size(10),
     alignItems: 'center',
     justifyContent: 'center',
-    // backgroundColor and border set inline for glass effect
+   
   },
   logoOuter: {
     width: wp(11),
@@ -42,18 +42,19 @@ export const headerBarStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   logoImage: {
-    width: '120%',
-    height: '120%',
+    width: '100%',
+    height: '100%',
     borderRadius: wp(3),
   },
-// logoOuter and logoInner are now utility functions, not part of StyleSheet.create
+
   appName: {
-    color: semantic.color.text,
+    color: primitives.colorMainName, 
     fontSize: primitives.font.xl,
     fontWeight: "800",
     letterSpacing: 0.25,
     maxWidth: '80%',
     flexShrink: 1,
+    marginLeft: size(10),
   },
   loginButton: {
     paddingVertical: size(4),
