@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, FlatList, ListRenderItemInfo } from "react-native";
-import { gameCardStyles as styles } from "@/styles/individualScreensStyle/GameCardStyle";
+import { gameCardStyles as styles } from "@/styles/componentsStyle/GameCardStyle";
 
 type Card = { id: string | number; title: string; image: any };
 

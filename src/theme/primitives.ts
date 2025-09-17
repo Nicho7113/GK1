@@ -29,5 +29,6 @@ export const primitives = {
     xxl: size(65),
   },
   color: { text: "#fff", bg: "#181818", border: "#333" },
+  colorMainName: '#517abdff',
   scale: 1.0,
 };

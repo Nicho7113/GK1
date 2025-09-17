@@ -14,7 +14,7 @@ export const semantic = {
     min: primitives.icon.xs,
   },
   space: {
-    barVMin: primitives.space.xs,
+    barVMin: primitives.space.sm,
     barVMax: primitives.space.xl,
     barHMin: primitives.space.xs, 
     barHMax: primitives.space.xl,
