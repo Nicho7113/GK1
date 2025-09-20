@@ -1,11 +1,9 @@
 import * as React from "react";
 import { Image, View, Text, TouchableOpacity } from "react-native";
 import { coverBackgroundStyles } from "@/styles/componentsStyle/CoverBackgroundStyle";
-import { Ionicons } from '@expo/vector-icons';
 import BackArrow from '@/components/global/backArrow';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
-import { size } from "react-native-responsive-sizes";
+
 
 interface CoverBackgroundProps {
   navigation?: any;

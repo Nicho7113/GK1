@@ -5,7 +5,6 @@ import { useIsFocused } from '@react-navigation/native';
 import { games } from "@/data/games";
 import { Ionicons } from '@expo/vector-icons';
 import { screenStyles } from "@/styles/globalStyles/ScreensStyle";
-import { semantic } from "@/theme/semantic";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { logScreenStyles } from "@/styles/individualScreensStyle/logScreenStyle";
 

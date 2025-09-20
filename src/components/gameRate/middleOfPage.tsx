@@ -1,7 +1,6 @@
 import { semantic } from "@/theme/semantic";
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import { middleOfPageStyles } from "@/styles/componentsStyle/MiddleOfPageStyle";
 
 interface MiddleOfPageProps {
