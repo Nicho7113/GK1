@@ -3,8 +3,7 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { View, Text } from "react-native";
 import { commentSectionStyles } from "@/styles/componentsStyle/CommentSectionStyle";
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
-import { size } from "react-native-responsive-sizes";
+
 
 interface CommentSectionProps {
   comments: string[];
