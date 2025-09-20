@@ -1,13 +1,13 @@
 import React from "react";
-import { View, FlatList, Image, Text, StyleSheet } from "react-native";
+import { View, FlatList, Image, Text } from "react-native";
 import { useRatedGames } from "@/state/RatedGamesContext";
 import { useIsFocused } from '@react-navigation/native';
 import { games } from "@/data/games";
 import { Ionicons } from '@expo/vector-icons';
 import { screenStyles } from "@/styles/globalStyles/ScreensStyle";
 import { semantic } from "@/theme/semantic";
-import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { logScreenStyles } from "@/styles/individualScreensStyle/logScreenStyle";
 
 export default function LogScreen() {
   const isFocused = useIsFocused();
@@ -32,14 +32,14 @@ export default function LogScreen() {
         numColumns={3}
         key={"grid-3"}
         renderItem={({ item }) => (
-          <View style={styles.cardWrapper}>
+          <View style={logScreenStyles.cardWrapper}>
             <Image
               source={item.portrait}
-              style={styles.cardImage}
+              style={logScreenStyles.cardImage}
             />
-            <View style={styles.overlay}>
+            <View style={logScreenStyles.overlay}>
               <Ionicons name="star" size={16} color="#FFD600" />
-              <Text style={styles.score}>{item.score}</Text>
+              <Text style={logScreenStyles.score}>{item.score}</Text>
             </View>
           </View>
         )}
@@ -48,63 +48,5 @@ export default function LogScreen() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#181c2b',
-    padding: 8,
-  },
-  grid: {
-    gap: 12,
-    paddingBottom: 24,
-  },
-  imageWrapper: {
-    position: 'relative',
-    margin: 6,
-    flex: 1,
-    aspectRatio: 1,
-    borderRadius: 12,
-    overflow: 'hidden',
-    backgroundColor: '#232a3d',
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
-  },
-  overlay: {
-    position: 'absolute',
-    right: 8,
-    bottom: 8,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'rgba(23,31,43,0.85)',
-    borderRadius: 8,
-    paddingHorizontal: 6,
-    paddingVertical: 2,
-  },
-  score: {
-    color: '#FFD600',
-    fontWeight: '700',
-    fontSize: 15,
-    marginLeft: 4,
-  },
-  cardWrapper: {
-    margin: 8,
-    borderRadius: 12,
-    overflow: 'hidden',
-    backgroundColor: '#232a3d',
-    alignItems: 'center',
-    justifyContent: 'center',
-    elevation: 2,
-  },
-  cardImage: {
-    width: widthPercentageToDP(26),
-    height: heightPercentageToDP(16),
-    resizeMode: 'cover',
-    borderRadius: 12,
-  },
-});
 
 
