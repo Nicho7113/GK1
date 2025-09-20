@@ -41,7 +41,7 @@ export const middleOfPageStyles = StyleSheet.create({
 		lineHeight: 22,
 	},
 	rateButton: {
-		backgroundColor: '#FFD600', // modern yellow
+		backgroundColor: '#FFD600', 
 		borderWidth: 1,
 		borderColor: '#ffe066',
 		paddingVertical: hp(1.2),
