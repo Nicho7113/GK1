@@ -8,11 +8,17 @@ import RateGameModal from "@/components/gameRate/rateGames";
 import { gameScreenStyle } from "@/styles/individualScreensStyle/gameScreenStyle";
 import CommentSection from "@/components/gameRate/commentSection";
 import { games } from "@/data/games";
+import { useRatedGames } from "@/state/RatedGamesContext";
 
 export default function GameScreen({ navigation, route }: { navigation: any, route: any }) {
   const [modalVisible, setModalVisible] = useState(false);
   const gameId = route?.params?.gameId || 1;
   const game = games.find(g => g.id === gameId) || games[0];
+  const { addRatedGame, ratedGames } = useRatedGames();
+
+  React.useEffect(() => {
+    console.log('Rated Games:', ratedGames);
+  }, [ratedGames]);
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -29,7 +35,9 @@ export default function GameScreen({ navigation, route }: { navigation: any, rou
           visible={modalVisible}
           onClose={() => setModalVisible(false)}
           onRate={(value) => {
-            console.log("Rated:", value);
+            addRatedGame(game.id, value);
+            setModalVisible(false);
+            console.log('Rated:', game.id, value);
           }}
         />
       </View>

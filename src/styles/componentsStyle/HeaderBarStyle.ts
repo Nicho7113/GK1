@@ -15,9 +15,7 @@ export const headerBarStyles = StyleSheet.create({
     minHeight: size(56),
     borderBottomWidth: 0,
     paddingVertical: size(6),
-    // default horizontal padding moved from component
     paddingHorizontal: size(12),
-    // default top padding is 0; component applies safe-area inset.top dynamically
     paddingTop: 0,
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
   },
